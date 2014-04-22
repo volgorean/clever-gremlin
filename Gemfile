@@ -31,6 +31,7 @@ gem 'nokogiri'
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
