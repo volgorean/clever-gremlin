@@ -1,0 +1,26 @@
+body {
+  background-color: Snow;
+}
+.backCircle {
+  margin-top: 5%;
+  background-color: SeaShell;
+  border-radius: 50%;
+  height: 600px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 10px #888888;
+}
+.mainForm {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+}
+
+@media screen and (max-width: 600px){
+    .backCircle {
+        width: 300px;
+        height: 300px;
+}
