@@ -24,6 +24,16 @@ class Blog < ActiveRecord::Base
      fixed
   end
 
+  #gives the scores of the x axis when given an array of paragraphs
+  def p_to_scores(paragraphs)
+    score = []
+    paragraphs.each do |para|
+      # this is where i add searching librarys to give me the score..(take out elementary words using a elmentary grade library, dictiionary check words.. then add points)
+      score << para.length
+    end
+    score
+  end
+
   # returns an array of words by their useage in an array ..eg.. [["blabla", 6],["hai", 2],["lolwut", 1]]
   def wordCount(words)
     words.group_by(&:downcase).map{ |word,instances|
