@@ -6,10 +6,13 @@ class Blog < ActiveRecord::Base
     begin
       doc = Nokogiri::HTML(open(url))
       text  = doc.at('body').inner_text
-      words = text.scan(/[a-z]+/i)
     rescue
       return false
     end
+  end
+
+  def textToWords(text)
+    words = text.scan(/[a-z]+/i)
   end
 
   # returns an array of words by their useage in an array ..eg.. [["blabla", 6],["hai", 2],["lolwut", 1]]
