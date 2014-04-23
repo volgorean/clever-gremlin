@@ -2,7 +2,7 @@ class Blog < ActiveRecord::Base
   require 'open-uri'
   validates :url, presence: true
 
-  def webScrape(url)
+  def web_scrape(url)
     begin
       doc = Nokogiri::HTML(open(url))
       text  = doc.at('body').inner_text
@@ -11,8 +11,17 @@ class Blog < ActiveRecord::Base
     end
   end
 
-  def textToWords(text)
+  def text_to_words(text)
     words = text.scan(/[a-z]+/i)
+  end
+
+  def word_size_over_time(text)
+     paragraphs = text.split(/[0-9]{2}[,|\/|\\| |]( )?[0-9]{4}/)
+     fixed = []
+     paragraphs.each do |para|
+      fixed << text_to_words(para).join(" ")
+     end
+     fixed
   end
 
   # returns an array of words by their useage in an array ..eg.. [["blabla", 6],["hai", 2],["lolwut", 1]]

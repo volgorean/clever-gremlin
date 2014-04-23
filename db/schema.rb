@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20140423012519) do
 
   create_table "blogs", force: true do |t|
     t.string   "url"
-    t.string   "x_over_time"
-    t.string   "y_over_time"
+    t.text     "x_over_time"
+    t.text     "y_over_time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "top_words"
